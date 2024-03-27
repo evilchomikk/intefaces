@@ -1,0 +1,49 @@
+h1{
+    font-size: 1.7vw;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+}
+
+.row hr {
+    width: 20vw;
+    margin: auto;
+    padding-bottom: 1vh;
+}
+
+.big-name{
+    font-size: calc(min(1.8vw,3vh)) ;
+    font-weight: bold;
+}
+
+.big-text-input{
+    font-size:  calc(min(1vw,2vh)); 
+    height: calc(min(2.2vw,3.5vh));
+}
+
+.big-drop-input{
+    font-size:  calc(min(1vw,2vh));
+    height: calc(min(2.5vw,4.2vh));
+}
+option{
+    height: calc(min(2.2vw,3.5vh));
+    font-size:  calc(min(1vw,2vh));
+}
+
+.avg-name{
+    font-size: calc(min(1.5vw,2.5vh)) ;
+    
+
+
+    align-self: flex-start;
+
+}
+.avg-text-input{
+    font-size:  calc(min(1vw,2vh)); 
+    height: calc(min(2.2vw,3.5vh));
+
+}
+.row{
+    padding-left: 0.5vh;
+    padding-right: 0.5vh;
+}

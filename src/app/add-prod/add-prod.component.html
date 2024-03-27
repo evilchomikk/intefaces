@@ -1,0 +1,140 @@
+<div class="col-12 flex-column h-100">
+  <div class="row mt-1">
+    <h1>DODAWANIE PRODUKTÓW</h1>
+  </div>
+
+  <div class="row">
+    <hr>
+  </div>
+
+  <div class="row">
+    <form>
+      <div class="mb-1">
+        <label for="input-name" class="form-label big-name">NAZWA:</label>
+        <input type="text" class="form-control big-text-input" id="input-name" [(ngModel)]="product.name">
+        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+      </div>
+
+      <div class="mb-1 ">
+        <div class="row">
+          <div class="col-6">
+            <label for="input-price" class="form-label big-name">RODZAJ</label>
+            <select class="form-select big-drop-input" [(ngModel)]="product.category" >
+              <option selected>Wybierz Rodzaj</option>
+              <option value="Wej">Wej</option>
+              <option value="Wyj">Wyj</option>
+              <option value="Tech">Tech</option>
+            </select>
+          </div>
+
+          <div class="col-6">
+            <label for="input-direction" class="form-label big-name">KIERUNEK</label>
+            <select class="form-select big-drop-input" [(ngModel)]="product.direction">
+              <option selected>Wybierz Kierunek</option>
+              <option value="Lewe">Lewe</option>
+              <option value="Prawe">Prawe</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="mb-1 ">
+        <div class="row">
+          <div class="col-6">
+            <label for="input-price" class="form-label big-name">CENA/szt</label>
+            <input type="number" class="form-control big-text-input col-2 " id="input-price"
+              aria-describedby="emailHelp" [(ngModel)]="product.price">
+          </div>
+          <div class="col-6">
+            <label for="input-quantity" class="form-label big-name">ILOŚĆ</label>
+            <input type="number" class="form-control big-text-input col-2 " id="input-quantity"
+              aria-describedby="emailHelp" [(ngModel)]="product.quantity">
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: 2vh;">
+        <hr>
+      </div>
+
+      <div class="row">
+        <div class="col-6 d-flex justify-content-end">
+          <label class="form-label avg-name">KOLOR:</label>
+        </div>
+        <div class="col-6">
+          <input type="text" class="form-control avg-text-input col-2 " id="input-color"
+               [(ngModel)]="product.color">
+        </div>
+      </div>
+
+      
+      <div class="row">
+        <div class="col-6 d-flex justify-content-end">
+          <label class="form-label avg-name">WYSOKOSC/mm:</label>
+        </div>
+        <div class="col-6">
+          <input type="number" class="form-control avg-text-input col-2 " id="input-height"
+               [(ngModel)]="product.height">
+        </div>
+      </div>
+
+      
+      <div class="row">
+        <div class="col-6 d-flex justify-content-end">
+          <label class="form-label avg-name">SZEROKOSC/mm:</label>
+        </div>
+        <div class="col-6">
+          <input type="number" class="form-control avg-text-input col-2 " id="input-width"
+               [(ngModel)]="product.width">
+        </div>
+      </div>
+
+      
+      <div class="row">
+        <div class="col-6 d-flex justify-content-end">
+          <label class="form-label avg-name">WAGA:</label>
+        </div>
+        <div class="col-6">
+          <input type="number" class="form-control avg-text-input col-2 " id="input-weight"
+               [(ngModel)]="product.weight">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6 d-flex justify-content-end">
+          <label class="form-label avg-name">MATERIAŁ:</label>
+        </div>
+        <div class="col-6">
+          <input type="text" class="form-control avg-text-input col-2 " id="input-material"
+               [(ngModel)]="product.material">
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-3 d-flex justify-content-flex ">
+          <label class="form-label avg-name">ZDJECIA:</label>
+        </div>
+        <div class="col-9">
+          <div class="row p-1">
+            <input type="file" class="form-control avg-text-input col-2 " id="input-photo1"
+                 [(ngModel)]="product.photo1">
+          </div>
+          <div class="row p-1">
+            <input type="file" class="form-control avg-text-input col-2 " id="input-photo2"
+                 [(ngModel)]="product.photo2">
+          </div>
+        </div>
+      </div>
+
+      <div class="row d-flex justify-content-flex ">
+        <button  (click)="postProduct()" type="submit" class="btn mt-4 " style="background-color: gray; width: 20vw; height: 5vh; margin: auto; font-weight: bold;">DODAJ</button>
+      </div>
+      
+
+
+
+    </form>
+  </div>
+</div>
