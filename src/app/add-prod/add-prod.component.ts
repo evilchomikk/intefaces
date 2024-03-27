@@ -1,4 +1,4 @@
-import { Component, HostBinding } from '@angular/core';
+import { ChangeDetectorRef, Component, HostBinding } from '@angular/core';
 import { FormsModule, NgModel } from '@angular/forms';
 import { Product } from '../../model/product';
 
@@ -31,13 +31,14 @@ export class AddProdComponent {
 standalone: any;
 
 
-  constructor() { }
+  constructor(private cdr:ChangeDetectorRef) { }
 
   ngOnInit(): void {
   }
 
   postProduct() {
 
+    console.log(this.product);
     const toSend = {
       id: 0,
       name: this.product.name,
@@ -55,6 +56,7 @@ standalone: any;
       photo2: this.product.photo2
     }
 
+    console.log(toSend);
 
     fetch('http://localhost:8080/api/door/add', {
       method: 'POST',
