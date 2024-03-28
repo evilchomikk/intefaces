@@ -1,0 +1,16 @@
+.vertical-line {
+    border-left: 1px solid black; /* Adjust thickness and color as needed */
+    height: 22vh; /* Adjust height as needed */
+    margin: 0 auto; /* Center the line horizontally */
+    width: 0;
+}
+p{
+    font-size: 1em;
+    font-weight: normal;
+    margin: 0;
+}
+
+img{
+    background-image: url(placeholder.png);
+    width: 100%;
+}
