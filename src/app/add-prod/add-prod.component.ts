@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, HostBinding } from '@angular/core';
 import { FormsModule, NgModel } from '@angular/forms';
 import { Product } from '../../model/product';
-
+import FileSaver from 'file-saver';
 
 
 @Component({
@@ -25,9 +25,13 @@ export class AddProdComponent {
     height: 0,
     weight: 0,
     material: '1',
-    photo1: '1',
-    photo2: '1'
+    image1: '1',
+    image2: '1'
   }
+
+  File1!:File;
+  File2!:File;
+
 standalone: any;
 
 
@@ -37,42 +41,83 @@ standalone: any;
   }
 
   postProduct() {
-
-    console.log(this.product);
-    const toSend = {
-      id: 0,
-      name: this.product.name,
-      direction: this.product.direction,
-      category: this.product.category,
-      price: this.product.price,
-      quantity: this.product.quantity,
-      color: this.product.color,
-      code: this.product.code,
-      width: this.product.width,
-      height: this.product.height,
-      weight: this.product.weight,
-      material: this.product.material,
-      photo1: this.product.photo1,
-      photo2: this.product.photo2
-    }
-
-    console.log(toSend);
-
     fetch('http://localhost:8080/api/door/add', {
       method: 'POST',
-      body: JSON.stringify(toSend) ,
       headers: {
-        'Content-Type': 'application/json'
-      }
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(this.product),
     })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Success:', data);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-    }
-      
-    
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
   }
+
+  onFile1Selected(event:any){
+    this.File1 = event.target.files[0];
+
+    if(this.File1){
+      const formData = new FormData();
+      formData.append('image', this.File1);
+
+        fetch('http://localhost:8080/api/door/savePhoto', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          console.log('File uploaded successfully');
+          
+        } else {
+          console.error('File upload failed');
+        }
+        return response.text(); // Convert response to text
+      })
+      .then(data =>{
+        this.product.image1 = data; // Assign response data as string
+      })
+    .catch(error => {
+      console.error('Error uploading file:', error);
+    });
+    }else{
+      console.log("No file selected");
+    }
+  }
+  
+  onFile2Selected(event:any){
+
+    this.File2 = event.target.files[0];
+
+    if(this.File2){
+      const formData = new FormData();
+      formData.append('image', this.File2);
+
+        fetch('http://localhost:8080/api/door/savePhoto', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          console.log('File uploaded successfully');
+          
+        } else {
+          console.error('File upload failed');
+        }
+        return response.text(); // Convert response to text
+      })
+      .then(data =>{
+        this.product.image2 = data; // Assign response data as string
+      })
+    .catch(error => {
+      console.error('Error uploading file:', error);
+    });
+    }else{
+      console.log("No file selected");
+    }
+  }
+
+}

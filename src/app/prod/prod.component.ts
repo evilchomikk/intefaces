@@ -10,7 +10,7 @@ import { Product } from '../../model/product';
 })
 export class ProdComponent {
 
-  @Input() product: Product={
+  @Input() product: Product = {
     name: '',
     direction: '',
     category: '',
@@ -22,7 +22,13 @@ export class ProdComponent {
     height: 0,
     weight: 0,
     material: '',
-    photo1: '',
-    photo2: ''
+    image1: '',
+    image2: ''
   };
+  getImage1(){
+    return this.product.image1;
+  }
+  getImage2(){
+    return this.product.image2;
+  }
 }

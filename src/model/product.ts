@@ -10,6 +10,6 @@ export interface Product {
     height: number;
     weight: number;
     material: string;
-    photo1: File | string;
-    photo2: File | string;
+    image1: string;
+    image2:  string;
 }

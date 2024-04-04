@@ -119,11 +119,11 @@
         <div class="col-9">
           <div class="row p-1">
             <input type="file" class="form-control avg-text-input col-2 " id="input-photo1"
-                 [(ngModel)]="product.photo1">
+            (change)="onFile1Selected($event)" >
           </div>
           <div class="row p-1">
             <input type="file" class="form-control avg-text-input col-2 " id="input-photo2"
-                 [(ngModel)]="product.photo2">
+                 (change)="onFile2Selected($event)">
           </div>
         </div>
       </div>
