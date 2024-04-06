@@ -1,4 +1,5 @@
-<section style="padding: 10px; display: flex; ">
+<section style="padding: 10px; display: flex; flex-direction: row; ">
+
     <div class="col-2" style="width: 15vw;">
         <div class="row">
             <h2 style="font-size: 1.5vw;">{{product.name}}</h2>
@@ -13,15 +14,13 @@
             <p style="font-size: 1.4vw; font-weight: normal;">W MAGAZYNIE: {{product.quantity}}szt</p>
         </div>
     </div>
+    <div class="vertical-line" style="width: 1vw; margin-right:  1vw; margin-left: 2vw; "></div>
 
-    <div class="col" style="margin-left: right;">
-        <div class="row">
-            <div class="vertical-line"></div>
-        </div>
-    </div>
+
+    
 
     <div class="col-2" >
-        <div class="row" style="padding: 0;">
+        <div class="row" style="">
             <p>KOLOR:{{product.color}}</p>
         </div>
         <div class="row">
