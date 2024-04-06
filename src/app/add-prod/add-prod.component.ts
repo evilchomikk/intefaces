@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component, HostBinding } from '@angular/core';
 import { FormsModule, NgModel } from '@angular/forms';
 import { Product } from '../../model/product';
 import FileSaver from 'file-saver';
+import { ProdFiltService } from '../prod-filt.service';
 
 
 @Component({
@@ -35,7 +36,7 @@ export class AddProdComponent {
 standalone: any;
 
 
-  constructor(private cdr:ChangeDetectorRef) { }
+  constructor(private cdr:ChangeDetectorRef, private prodservice:ProdFiltService) { }
 
   ngOnInit(): void {
   }
@@ -51,6 +52,7 @@ standalone: any;
     .then(response => response.json())
     .then(data => {
       console.log('Success:', data);
+      this.prodservice.doors.push(data);
     })
     .catch((error) => {
       console.error('Error:', error);

@@ -10,6 +10,9 @@ import { Product } from '../../model/product';
 })
 export class ProdComponent {
 
+  isImageExpandedImg1 = false;
+  isImageExpandedImg2 = false;
+
   @Input() product: Product = {
     name: '',
     direction: '',
@@ -30,5 +33,26 @@ export class ProdComponent {
   }
   getImage2(){
     return this.product.image2;
+  }
+
+  openFullscreen(event: { target: any; }) {
+    const elem = event.target;
+  
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) { /* Firefox */
+      elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE/Edge */
+      elem.msRequestFullscreen();
+    }
+  }
+
+  expandImage1() {
+    this.isImageExpandedImg1 = !this.isImageExpandedImg1;
+  }
+  expandImage2() {
+    this.isImageExpandedImg2 = !this.isImageExpandedImg2;
   }
 }

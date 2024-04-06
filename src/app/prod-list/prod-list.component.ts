@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Product } from '../../model/product';
 import { NgFor } from '@angular/common';
 import { ProdComponent } from '../prod/prod.component';
+import { ProdFiltService } from '../prod-filt.service';
 
 @Component({
   selector: 'app-prod-list',
@@ -14,8 +15,9 @@ export class ProdListComponent {
 
   @Input() products:Product[] = [];
 
-  constructor() { }
+  constructor(private prodService: ProdFiltService) { }
 
   ngOnInit(): void {
+    console.log(this.products);
   }
 }

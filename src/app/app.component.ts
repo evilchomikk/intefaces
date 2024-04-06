@@ -4,6 +4,8 @@ import { AddProdComponent } from './add-prod/add-prod.component';
 import { ProdListComponent } from './prod-list/prod-list.component';
 import { Product } from '../model/product';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ProdFiltService } from './prod-filt.service';
+import { response } from 'express';
 
 @Component({
   selector: 'app-root',
@@ -15,19 +17,19 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 export class AppComponent {
   title = 'DOORSLY';
 
-  doors: Product[] = [];
+  doors!: Product[] ;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,public prodservice:ProdFiltService) {
   
   }
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    this.getDoors().then((doors) => {
-      this.doors = doors;
-    });
+    this.getDoors();
+    this.doors = this.prodservice.getDoors();
   }
+
 
   // async getDoors(): Promise<Product[]> {
   //   try {
@@ -41,14 +43,25 @@ export class AppComponent {
   //     return [];
   //   }
   // }
-  async getDoors(): Promise<Product[]> {
-    try {
-      const doors = await this.http.get<Product[]>('http://localhost:8080/api/door/getAll').toPromise();
-      console.log(doors);
-      return doors as Product[] ; // Add default value of an empty array
-    } catch (error) {
-      alert('Nie udało się pobrać danych');
+  getDoors(): Product[] {
+
+      fetch('http://localhost:8080/api/door/getAll', {
+        method: 'GET',
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+        this.prodservice.doors = data;
+        this.doors = this.prodservice.doors;
+        console.log(this.prodservice.doors);
+        return data as Product[];
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+
       return [];
-    }
   }
+
+
 }
