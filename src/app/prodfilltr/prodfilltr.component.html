@@ -1,0 +1,105 @@
+<section>
+    <div class="row">
+    <div class="col-3">
+        <div class="row">
+            <div class="col-4">
+                <h3>NAZWA:</h3>
+            </div>
+            <div class="col-8">
+                <input type="text" id="id-input" class="form-control form-control" placeholder=""
+                    [(ngModel)]="product.name">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <h3 class="">RODZAJ:</h3>
+            </div>
+            <div class="col-6">
+                <h3>KIERUNEK:</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <select class="form-select big-drop-input" [(ngModel)]="product.category">
+                    <option value="Wej">Wej</option>
+                    <option value="Wyj">Wyj</option>
+                    <option value="Tech">Tech</option>
+                </select>
+            </div>
+  
+
+            <div class="col-6">
+                <select class="form-select big-drop-input" [(ngModel)]="product.direction">
+                    <option value="Lewe">Lewe</option>
+                    <option value="Prawe">Prawe</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="vertical-line"></div>
+    
+    
+    <div class="col-4">
+        <div class="row">
+            <div class="col-6">
+                <h3>KOLOR:</h3>
+            </div>
+            <div class="col-6">
+                <input type="text" id="id-input" class="form-control form-control" placeholder=""
+                    [(ngModel)]="product.color">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <h3 style="font-size: 3vh;">WYSOKOSC/mm:</h3>
+            </div>
+            <div class="col-6">
+                <input type="number" id="id-input" class="form-control form-control" placeholder=""
+                    [(ngModel)]="product.height">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <h3>SZEROKOSC/mm</h3>
+            </div>
+            <div class="col-6">
+                <input type="number" id="id-input" class="form-control form-control" placeholder=""
+                    [(ngModel)]="product.width">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-4">
+        <div class="row">
+            <div class="col-6">
+                <h3>MATERIAŁ:</h3>
+            </div>
+            <div class="col-6">
+                <input type="text" id="material-input" class="form-control form-control" placeholder=""
+                    [(ngModel)]="product.material">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <h3 style="font-size: 3vh;">KOD:</h3>
+            </div>
+            <div class="col-6">
+                <input type="text" id="id-input" class="form-control form-control" placeholder=""
+                    [(ngModel)]="product.code">
+            </div>
+        </div>
+
+        <div class="row">
+           <button class="btn " style="background-color: rgb(255, 240, 219);" (click)="getFillterdProducts()">SZUKAJ</button>
+        </div>
+    </div>
+</div>
+</section>
+

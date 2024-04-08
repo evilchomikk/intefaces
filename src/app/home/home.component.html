@@ -1,0 +1,27 @@
+<div class="row" id="first-row">
+
+    <div class="col-3" id="page_title_box" style="background-color: rgb(255, 240, 219);">
+      <p class="PageTitle  ">{{title}} </p>
+    </div>
+    <div class="col-9" id="search-panel">
+      <app-prodfilltr></app-prodfilltr>
+    </div>
+  </div>
+  
+  
+  <div class="row " id="second-row">
+  
+    <div class="col-3" id="add_prod_panel">
+      <div class="row">
+        <app-add-prod></app-add-prod>
+      </div>
+      <div class="row">
+        
+      </div>
+    </div>
+  
+  
+    <div class="col" style="padding-top: 2vh; background-color: rgb(255, 240, 219); border: 2px solid grey;" >
+      <app-prod-list [products]="doors" ></app-prod-list>
+    </div>
+  </div>

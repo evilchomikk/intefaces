@@ -15,19 +15,19 @@ import { ProdFiltService } from '../prod-filt.service';
 export class AddProdComponent {
 
   product: Product = {
-    name: '1',
-    direction: '1',
-    category: '1',
+    name: '',
+    direction: '',
+    category: '',
     price: 0,
     quantity: 0,
-    color: '1',
-    code: '1',
+    color: '',
+    code: '',
     width: 0,
     height: 0,
     weight: 0,
-    material: '1',
-    image1: '1',
-    image2: '1'
+    material: '',
+    image1: '',
+    image2: ''
   }
 
   File1!:File;

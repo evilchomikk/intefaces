@@ -1,0 +1,27 @@
+<div style="background-color: rgb(255, 240, 219);">
+  <div class="row justify-content-center ">
+    <div class="col-4" style="background-color: rgb(116, 51, 14);"></div>
+    <div class="col-4" style="background-color: rgb(255, 240, 219);border: 2px solid grey;">
+      <p class="text-center" style=" font-size: 5vw; font-weight: bold; font-style: italic; ">
+        DOORSLY</p>
+    </div>
+    <div class="col-4" style="background-color: rgb(116, 51, 14);"></div>
+  </div>
+
+
+  <div class="row  center-content" style="height: 100vh;">
+    <div class="col-4  center-content" style="background-color: darkgrey; height: 100% ;border: 2px solid grey;;">
+      <div class="col-10 " style="margin-top: 25vh;  ">
+        <form (ngSubmit)="login()">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" [(ngModel)]="username" name="username" class="form-control mb-2" placeholder="Username">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" [(ngModel)]="password" name="password" class="form-control mb-4"
+            placeholder="Password">
+          <button type="submit" class="btn  btn-block col-12" style="background-color: rgb(116, 51, 14); color: rgb(255, 240, 219); ">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>

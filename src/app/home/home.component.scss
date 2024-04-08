@@ -1,0 +1,41 @@
+.PageTitle{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style:italic;
+    font-weight: bold;
+    font-size: 4vw;
+    display: flex;
+    justify-content: center;
+}
+#first-row{
+    height: 7vw;
+}
+
+#page_title_box{
+    border-radius: 0 0 0 0px;
+    border-width: 2;
+    border-style: solid;
+    border-color: gray;
+}
+
+#add_prod_panel{
+    background-color: darkgrey;
+    border-radius: 0 0 0 0px;
+    border-width: 2;
+    border-style: solid;
+    border-color: gray;
+    //flex: auto;
+}
+
+#second-row{
+    height: calc(100vh - 7vw );
+}
+
+#search-panel{
+    background-color: rgb(116, 51, 14);
+    border-radius: 0px;
+    border-top: 2px;
+    border-left: 2px;
+    border-style: solid;
+    border-color: gray;
+    height: 7.1vw;
+}

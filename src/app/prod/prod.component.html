@@ -19,8 +19,8 @@
 
     
 
-    <div class="col-2" >
-        <div class="row" style="">
+    <div class="col-2" style="width: 10vw;" >
+        <div class="row" >
             <p>KOLOR:{{product.color}}</p>
         </div>
         <div class="row">
@@ -40,10 +40,11 @@
         </div>
     </div>
 
-    <div class="col" style="margin-left: 3vw;">
+    <div class="col-2" style="margin-left: 7vw;">
         <img  [src]="getImage1()" alt="Product image" (click)="expandImage1()" [class.expanded]="isImageExpandedImg1">    </div>
 
-    <div class="col" style="margin-left: 3vw;">
+    <div class="col-2" style="margin-left: 7vw;">
         <img src="{{product.image2}}" alt="placeholder"  (click)="expandImage2()" [class.expanded]="isImageExpandedImg2"  >
     </div>
+
 </section>

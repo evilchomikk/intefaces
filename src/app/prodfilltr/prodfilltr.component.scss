@@ -1,0 +1,21 @@
+.vertical-line {
+    border-left: 1px solid black; /* Adjust thickness and color as needed */
+    height: 12vh; /* Adjust height as needed */
+    margin-left: 2vh; /* Center the line horizontally */
+    margin-right: 0vh;
+    margin-top: 1vh; /* Center the line horizontally */
+    width: 0;
+}
+
+input{
+    background-color: rgb(255, 240, 219);
+    margin-top: 2px;
+}
+
+select{
+    background-color: rgb(255, 240, 219);
+}
+
+h3{color: #000;
+    margin-top: 2px;
+}
